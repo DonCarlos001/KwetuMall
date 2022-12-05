@@ -1,0 +1,118 @@
+.coll a{
+    color: black;
+    text-decoration: none;
+  }
+  .navigation{
+    display: flex;
+    list-style:none;
+  } 
+  .navigation li{
+    padding: 20px;
+    color: black;
+  }
+  .product_image{
+    height: 200px;
+    width: 250px;
+    border-radius:20px;
+    margin-left: 0.5cm;
+  }
+  .small_image{
+    padding: 20px;
+    margin-left: 10px;
+  }
+  .small_images{
+  padding: 5px;
+  border-radius:20px;
+  margin-left:auto;
+  height:20vh;
+  width: 11vw;
+  }
+  .product_name{
+    color: orange;
+    font-size: 20px;
+    margin-top: 40px;
+  }
+  .product_text{
+    font-size: 50px;
+    margin-top: 40px;
+  }
+  .product_description{
+    font-size: 50px;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  .price{
+    display: flex;
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .discount{
+    margin-left: 2cm;
+    border-radius: 10px;
+    color: orange;
+    background-color: rgb(248, 224, 192);
+    height: 30px;
+    width: 50px;
+    text-align: center;
+    font-size: large;
+  }
+  .original_price{
+    margin-top: 20px;
+    font-size: 30px;
+    color: rgb(147, 147, 213);
+    text-decoration: line-through;
+    font-weight: 700;
+  }
+  .product_desc{
+    color:rgb(147, 147, 213) ;
+    font-size: 20px;
+  }
+  .profile{
+    margin:0 0 0 auto;
+  }
+  .counter{
+    display: flex;
+    height: 6vh;
+    padding-left: 4px;
+    margin-top: 50px;
+    font-size:25px;
+  }
+  .cart{
+    height:50px;
+    width:100px;
+    background-color: hsl(26, 100%, 55%);
+    color: aliceblue;
+    margin-left:auto;
+    border: none;
+    border-radius:20px;
+    margin-right: auto;
+  }
+  .zero{
+    margin-top:13px;
+    border: none;
+  }
+  .cnt_btn-2{
+    margin-left: auto;
+    border: none;
+  }
+  .cnt_btn-1{
+    margin-right: auto;
+    border: none;
+  }
+  .avatar{
+    height: auto;
+    width:2vw;
+  }
+  .man{
+    padding: 0;
+    border-radius: 10px;
+  }
+  .man:focus:not(:focus-visible){
+    padding: 0;
+    border-radius: 12px;
+    border: 5px solid orange;
+
+
+  }
+  

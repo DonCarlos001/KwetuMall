@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+.crd1{
+    background-image:url(../../public/images/backgroundimage4.png);
+    height:70vh;
+    width:40vw;
+}
+.kag{
+    height: 100px;
+    width: 100px;
+}
+.body{
+    text-align: center;
+    color: blue;
+}
+.wbc{
+    color: blue;
+    text-decoration: underline;
+    font-size: 300%;
+}
+.fun{
+    font-family: 'Great Vibes', cursive;
+    margin-top: 10px;
+    font-size: 600%;
+}
+.wsi{
+    margin-top: 10px;
+    font-size: 250%;
+}
+.mms{
+    margin-top: 20px;
+    font-size: 250%;
+}
+.lubtc{
+    margin-top: 20px;
+    font-size: 200%;
+}
+.frs{
+    margin-top: 20px;
+    font-size: 120%;
+}
+.j2023{
+    margin-top: 20px;
+    background-color: orange;
+    width: 30vw;
+    border: none;
+}
+.jn{
+    color: white;
+    font-size: x-large;
+}
+.rs{
+    margin-top: 30px;
+    font-size:200;
+}

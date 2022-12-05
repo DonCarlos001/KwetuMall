@@ -1,0 +1,32 @@
+.productdetailimage{
+    height: 600px;
+    width: 700px;
+}
+.btn-2{
+    height: 50px;
+    width: 700px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(60, 148, 142);
+    text-align:center;
+    margin-top: 5px;
+    border-radius: 10px;
+
+}
+.price{
+    font-size: 40px;
+    font-weight: 900;
+    color: rgb(39, 135, 125);
+} 
+.description{
+    font-size: 25px;
+}
+.col-6{
+    font-size: 80px;
+}
+.oldPrice{
+    font-size:30px;
+    font-weight: 400;
+    color: rgb(38, 97, 127);
+    text-align: right;
+    text-decoration: line-through;
+}

@@ -1,0 +1,95 @@
+.player{
+  width:99% ;
+}
+.main_img{
+    height: 550px;
+    width: 1345px;
+    margin-left: -12px;
+}
+.nav{
+    display: flex;
+    list-style:none;
+    font-size: large;
+}
+.co a{
+    color: black;
+    text-decoration: none;
+  }
+  .nav li{
+    padding: 20px;
+    color: black;
+  }
+  .log{
+    margin:0 0 0 auto;
+    padding-left: 50px;
+    display: flex;
+    border: none;
+  }
+  .srch{
+    width:700px ;
+    height:60px;
+    background-color: orange;
+    border: none;
+  }
+  .fct{
+    display: flex;
+  }
+.formCnt{
+    height:4vh;
+    width: 25vw;
+    margin-left: 300px;
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px;
+}
+.srch{
+    height: 4vh;
+    width: 4vw;
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px;
+    color: white;
+}
+.tegory{
+  font-size: x-large;
+}
+  .cat{
+    font-size:large;
+    border: none;
+    margin-top: 15px;
+    background-color:#EAEAEA;
+  }
+  .reg{
+    background-color:orange;
+    margin-left:10px;
+    border: none;
+    height: 5vh;
+    width: 10vw;
+  }
+  .lo{
+    background-color: orange;
+    margin-left: 10px;
+    height: 5vh;
+    width: 10vw;
+    border: none;
+  }
+  .atc{
+    height: 5vh;
+    width: 10vw;
+    background-color:orange;
+    border: none;
+  }
+  .empty{
+    height: 0.5vh;
+    width: 99vw;
+    background-color: orange;
+  }
+  .col-1{
+    background-color:#EAEAEA;
+    width:15%;
+    margin-left: 10px;
+  }
+  .row{
+    margin-top: 5px;
+  }
+  .procuct{
+    margin-top: 10px;
+  }

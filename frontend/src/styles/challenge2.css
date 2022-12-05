@@ -1,0 +1,26 @@
+.h{
+font-weight: 900px;
+font-size: 70px;
+margin-top: 120px;
+}
+.p{
+font-size: 20px;
+margin-top: 50px;
+}
+.btn{
+    height: 50px;
+    width: 150px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    text-align:center;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+/* .list{
+    display:flex;
+    list-style: ;
+} */
+.title{
+    margin-left: 3cm;
+    text-decoration: none;
+}
