@@ -20,7 +20,7 @@ const CartDetails=()=>{
         console.log(userId)
         Axios.get(`http://localhost:4001/user/getcartdetails/${userId}`)
         .then((data)=>setProducts(data.data))
-        },[])
+        },[]);
     // const[num, setNum]= useState(0);
     // const [bool, setBool]= useState(false)
     // useEffect(()=>{
