@@ -8,7 +8,7 @@ const GetDetails =() =>{
     }
     const onSubmitData= (e)=>{
         e.preventDefault();
-        Axios.post(`http://localhost:4000/getdetails`,postData)
+        Axios.post(`http://localhost:4001/getdetails`,postData)
         .then(res=> console.log(res.data))
         .catch(erroe=>{console.log(erroe.response.data)})
     }

@@ -3,9 +3,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import "../styles/home.css";
 import Product from "./Product"
 import Axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const [products, setProducts]=useState([]);
+    const navigate= useNavigate();
 
     useEffect( ()=>{
         const allProducts= async()=>{
@@ -18,7 +20,7 @@ const Home = () => {
 
     return (
         <div className= "player">
-            <div className= "nav" >
+            <div className= "nav">
                 {/* <li className="co"><a href="/"><button className="log">Settings</button></a></li> */}
                 <form className="fct">
                 <input className= "formCnt"></input>
@@ -26,8 +28,8 @@ const Home = () => {
                 </form>
                 <div className="log">
                     <button className="atc">Add to cart</button>
-                    <button className="reg">Register</button>
-                    <button className="lo">Login</button>
+                    <button className="reg" onClick={()=>{navigate(`/register`)}}>Register</button>
+                    <button className="lo" onClick={()=>{navigate(`/login`)}}>Login</button>
                 </div>
             </div>
             <div className="empty"></div>

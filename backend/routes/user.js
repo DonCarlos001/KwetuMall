@@ -1,5 +1,6 @@
 import express from 'express'
 import User from '../models/user.js'
+import Product from '../models/product.js'
 
 const router = express.Router();
 
@@ -17,19 +18,52 @@ router.post('/addtocart/:id', async (req, res)=>{
 
     const prod= user.cart.filter((item)=> item.id === req.body.productId);
     if (prod.length>0){
-        res.send('You already have this in your cart')
+        res.send('You already have this in your cart') 
     }else{
         user.cart=[...user.cart,{
             id:req.body.productId,
             quantity:req.body.quantity
         }]
+        const result=await user.save();
+        res.send(result)
     }
-   
-    const result=await user.save();
-    res.send(result)
-    // console.log(user)
-    // res.send('Success')
-    
+})
+
+// add getcart route
+// accept id
+//get cart from userId
+// get number of items inside the cart 
+// send that number as the response 
+
+router.get('/getcart/:id', async ( req, res)=>{
+    console.log(req.params.id);
+    const user= await User.findOne({_id:req.params.id});  
+    console.log('user')
+    console.log(user)
+    res.send(user.cart.length.toString());
+
+})
+
+router.get('/getcartdetails/:id', async(req, res)=>{
+    console.log(req.params.id); 
+    const user= await User.findOne({_id:req.params.id}); 
+    let cartDetails=[];
+ 
+   for(let i=0;i<user.cart.length; i++){
+    let item = user.cart[i] 
+    const product= await Product.findOne({_id: item.id})
+    if(product){
+        cartDetails=[...cartDetails,{
+            productId: item.id,
+            image: product.main_image,
+            name: product.name,
+            quantity:product.quantity,
+            price: product.price,
+        }] 
+    }
+   };
+   console.log(cartDetails)
+   res.send(cartDetails)
 })
 
 export default router;

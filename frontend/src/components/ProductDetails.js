@@ -1,17 +1,20 @@
 import React,{useState, useEffect} from 'react';
 import"../styles/productdetails.css";
 import Axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import useAuth from './hooks/useAuth';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 const ProductDetails= () =>{
 
     const {id}=useParams();
+    const navigate= useNavigate();
     // console.log('we got the id:'+ id)
-    useAuth(`./productdetails/${id}`, 'token');
+    const [cartCount]=useAuth(`/productdetails/${id}`, 'token')
+    console.log(cartCount)
     const [message, setMessage]= useState()
-    
+    const [color, setColor]= useState()
     const [product, setProduct]= useState({
         name:'',
         description:'',
@@ -53,11 +56,14 @@ const ProductDetails= () =>{
         Axios.post(`http://localhost:4001/user/addtocart/${id}`,{userId, productId, quantity})
         .then ((data)=>{
             if(data.data==='You already have this in your cart'){
-                setMessage('Product already in cart')
+                setMessage('Product already in cart');
+                setColor('red')
             }else{
-                setMessage('Product added to cart')
+                setMessage('Product added to cart');
+                setColor('green')
             }
         })
+        
         // data to pass; product.id, user.id, quantity
         //axios.post (user/addtocart, pass the data)
         // .then ((data)=> console.log(data))
@@ -65,57 +71,45 @@ const ProductDetails= () =>{
 
     return (
     <div className = "product-details">
-         {message ?<p className="alert">{message}</p>: null}
-        <div className= "row">
-            <div className = "col-6">
-            <img alt = 'product' src = {path+product.mainImage} className="productdetailimage1"/>
-            <div>
-                {
-                    product.image.map(image=> {
-                        return(
-                            <img  src ={path + image} alt = 'smallproduct' className="small_img" />
-                        )
-                    })
-                }
+        {message ?<p className={color}>{message}</p>: null}
+            <div className="left"  onClick={()=>{navigate(`/cart`)}}>
+               <p className="cartbtn">{cartCount}</p>
+                <p className="cartIcon"><ShoppingCartIcon/></p>
             </div>
-            {/* <img alt = 'smallproduct' src ={path + product.image}/> */}
-            </div>
-            <div className = "col-6">
-                <p>{product.name}</p>
-                <div className= "description">
-                <h5>Description</h5>
-                <p> {product.description}
-                </p>
-                <p className="price">{product.price}</p>
-                <div className="count">
-                    <button onClick={addCounter}>+</button>
-                    <p className="zero">{counter}</p>
-                    <button onClick= {minusCounter}>-</button>
-                    <button className= "button" onClick={saveToUser}>ADD TO CHART</button>
+            <div className="line"></div>
+        {/* <div className="secondDiv"> */}
+            <div className= "row">
+                <div className = "col-6">
+                    <img alt = 'product' src = {path+product.mainImage} className="productdetailimage1"/>
+                    <div>
+                        {
+                            product.image.map(image=> {
+                                return(
+                                    <img  src ={path + image} alt = 'smallproduct' className="small_img" />
+                                )
+                            })
+                        }
+                    </div>
+                    {/* <img alt = 'smallproduct' src ={path + product.image}/> */}
+                </div>
+                <div className = "col-6">
+                    <p>{product.name}</p>
+                    <div className= "description">
+                    <h5>Description</h5>
+                    <p> {product.description}
+                    </p>
+                    <p className="price">{product.price}</p>
+                    <div className="count">
+                        <button onClick={addCounter}>+</button>
+                        <p className="zero">{counter}</p>
+                        <button onClick= {minusCounter}>-</button>
+                        <button className= "button" onClick={saveToUser}>ADD TO CHART</button>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-    
-        
-        
-        {/* <div>
-            <div>REVIEWS</div>
-            <div>
-                <h6>Carlos</h6>
-                <p>Great drink to share with Friends.</p>
-            </div>
-            <div>
-                <h6>Dave</h6>
-                <p>I love the packaging of this drink.
-                    Very easy to pack while on a day out.</p>
-            </div>
-            <div>
-                <h6>Anne</h6>
-                <p>I enjoyed this drink so much.</p>
-            </div>
-        </div> */}
     </div>
-      );
+    // </div>
+    )
 }
 export default ProductDetails;

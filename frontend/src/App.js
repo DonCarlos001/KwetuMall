@@ -28,6 +28,9 @@ import Login from "./components/Auth/Login";
 import AdminRegister from "./components/admin/auth/Register";
 import AdminLogin from "./components/admin/auth/Login";
 import Image from "./exercises/ImageComponents";
+import CartDetails from './components/cartDetails'
+import StyleComponent from './exercises/styleComponent'
+import APIComponents from './exercises/APIComponents'
 // import DeleteProduct from "./components/admin/product/Delete"
 
 function App() {
@@ -40,6 +43,7 @@ function App() {
           <Route exact path = "/productdetails/:id"element= {<ProductDetails/>}/>
           <Route exact path= "/register"element= {<Register />}/>
           <Route exact path= "/login"element= {<Login />}/>
+          <Route exact path= "/cart"element= {<CartDetails />}/>
 
           {/* Admin routes */}
           <Route exact path = "/producthome" element= {<ProductHome/>}/>
@@ -66,6 +70,8 @@ function App() {
           <Route exact path = "/callbackcounter" element= {<CallbackCounter/>}/>
           <Route exact path = "/productexercise" element= {<Productexercise/>}/>
           <Route exact path = "/image" element= {<Image/>}/>
+          <Route exact path = "/stylecomponent" element= {<StyleComponent/>}/>
+          <Route exact path = "/apicomponents" element= {<APIComponents/>}/>
         </Routes>
       </div>
      
